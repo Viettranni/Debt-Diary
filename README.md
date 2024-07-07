@@ -18,7 +18,7 @@ Additional!
 - The user might have debt in different currencies so implement those features to convert. Use some currency api if available.
 
 Technologies:
-- Node.js
+- Node.js --> Express
 - Javascript
 - HTML/CSS
 - database?
