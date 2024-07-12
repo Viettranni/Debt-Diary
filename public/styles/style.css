@@ -1,0 +1,14 @@
+/* public/styles/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+#fetchDataBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#dataDisplay {
+    margin-top: 20px;
+    font-size: 18px;
+}
