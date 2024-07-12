@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     creditor: String,
     amount: Number,
     currency: String,
-    due_date: Date
+    dueDate: Date
 });
 
 // Create the User model
