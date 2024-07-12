@@ -4,14 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
+    <title>Debt Diary</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-<h1>Frontend to Backend Communication</h1>
-<button id="fetchDataBtn">Fetch Data from Backend</button>
-<div id="dataDisplay"></div>
 
-<script src="/scripts/script.js"></script>
+    <h1>Add a New User!</h1>
+
+    <form id="userForm">
+        <input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required>
+        <input type="text" id="creditor" name="creditor" placeholder="Creditor" autocomplete="organization" required>
+        <input type="number" id="amount" name="amount" placeholder="Amount" autocomplete="off" required>
+        <input type="text" id="currency" name="currency" placeholder="Currency" autocomplete="off" required>
+        <input type="date" id="dueDate" name="dueDate" placeholder="Due Date" autocomplete="bday" required>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <h1>Frontend to Backend Communication</h1>
+    <button id="fetchDataBtn">Fetch Data from Backend</button>
+    <div id="dataDisplay"></div>
+
+    <script src="/scripts/script.js"></script>
 </body>
 </html>
