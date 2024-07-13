@@ -52,8 +52,10 @@ app.post('/api/users', (req, res) => {
 });
 
 app.get('/api/users', (req, res) => {
-
-})
+    User.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
