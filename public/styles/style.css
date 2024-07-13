@@ -1,14 +1,44 @@
 /* public/styles/style.css */
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin-top: 250px;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f0f0f0;
 }
-#fetchDataBtn {
+
+#userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+    padding: 40px;
+    margin: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#userForm input[type="text"],
+#userForm input[type="number"],
+#userForm input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#submit-user {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-}
-#dataDisplay {
     margin-top: 20px;
-    font-size: 18px;
+    display: block;
+    width: 100%;
 }
