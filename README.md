@@ -22,4 +22,4 @@ Technologies:
 - Node.js --> Express
 - Javascript
 - HTML/CSS
-- database?
+- MongoDB Atlas 
