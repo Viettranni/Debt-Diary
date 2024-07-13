@@ -9,21 +9,28 @@
 </head>
 <body>
 
-    <h1>Add a New User!</h1>
+    <h1>Debt Diary</h1>
 
     <form id="userForm">
-        <input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required>
-        <input type="text" id="creditor" name="creditor" placeholder="Creditor" autocomplete="organization" required>
-        <input type="number" id="amount" name="amount" placeholder="Amount" autocomplete="off" required>
-        <input type="text" id="currency" name="currency" placeholder="Currency" autocomplete="off" required>
-        <input type="date" id="dueDate" name="dueDate" placeholder="Due Date" autocomplete="bday" required>
-        <button type="submit">Submit</button>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="creditor">Creditor:</label>
+        <input type="text" id="creditor" name="creditor" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+
+        <label for="currency">Currency:</label>
+        <input type="text" id="currency" name="currency" required>
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="dueDate" required>
+
+        <button type="submit" id="submit-user">Submit</button>
     </form>
 
-
-    <h1>Frontend to Backend Communication</h1>
-    <button id="fetchDataBtn">Fetch Data from Backend</button>
-    <div id="dataDisplay"></div>
+    <div id="log-of-debts"></div>
 
     <script src="/scripts/script.js"></script>
 </body>
