@@ -2,7 +2,9 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const User = require('../models/User.js')
+const authRoutes = require('./routes/authRoutes')
+const apiRoutes = require('./routes/apiRoutes')
+
 
 const app = express();
 
@@ -20,6 +22,9 @@ mongoose.connect(uri)
 
 //------------------------------------------------------------------------------------------------------------------------
 
+// Routes
+app.use('/api', apiRoutes);
+app.use('/auth', authRoutes)
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -29,33 +34,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'templates', 'index.html'));
 });
 
-// API endpoint example
-app.get('/api/data', (req, res) => {
-    res.json({ message: 'Hello from the backend!' });
-});
-
-
-// API own test endpoint to insert data to the DebtDiary database
-app.post('/api/users', (req, res) => {
-    const { name, creditor, amount, currency, dueDate } = req.body;
-    const newUser = new User({
-        name,
-        creditor,
-        amount,
-        currency,
-        dueDate: new Date(dueDate)
-    });
-
-    newUser.save()
-        .then(user => res.json(user))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
-app.get('/api/users', (req, res) => {
-    User.find()
-        .then(users => res.json(users))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
 
 // Start the server
 const PORT = process.env.PORT || 3000;

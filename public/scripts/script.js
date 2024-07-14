@@ -1,4 +1,3 @@
-
 // Storing the data from html to JSON to be sent to server
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('userForm');
