@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 
 // API own test endpoint to insert data to the DebtDiary database
-router.post('/api/users', (req, res) => {
+router.post('/users', (req, res) => {
     const { name, creditor, amount, currency, dueDate } = req.body;
     const newUser = new User({
         name,
@@ -19,7 +19,7 @@ router.post('/api/users', (req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.get('/api/users', (req, res) => {
+router.get('/users', (req, res) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(400).json('Error: ' + err));
