@@ -3,6 +3,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm')
     const loginForm = document.getElementById('loginForm')
+    const loginButton = document.getElementById('login-user')
+    const registerButton = document.getElementById('register-user')
+
+    if (loginButton) {
+        loginButton.addEventListener('click', () => {
+            window.location.href = '../templates/login.html';
+        });
+    }
+
+    if (registerButton) {
+        registerButton.addEventListener('click', () => {
+            window.location.href = '../templates/register.html';
+        })
+    }
 
     if (registerForm) {
         registerForm.addEventListener('submit', async (event) => {
