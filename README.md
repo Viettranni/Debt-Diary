@@ -1,8 +1,6 @@
 # Debt-Diary
 Beat your Debts!
 
-TESTING NEW PUSH
-
 Features for Debt Diary Project
 
 - When the user logs in there is an option for the user to pick from which dept they wanted to pay out first. 
