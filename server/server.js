@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 
-// Start the server
+// Start the server and listen on PORT 3000 if not setted in env
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
