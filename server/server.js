@@ -5,7 +5,6 @@ require('dotenv').config();
 const authRoutes = require('./routes/authRoutes')
 const apiRoutes = require('./routes/apiRoutes')
 
-
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -13,9 +12,10 @@ app.use(express.json())
 
 //------------------------------------------------------------------------------------------------------------------------
 
-// Connecting to MongoDB, taking the key from .env file (MONGODB_URI)
+// Extracting the key from .env file (MONGODB_URI)
 const uri = process.env.MONGODB_URI;
 
+// Connecting to MongoDB and letting the user know if it was successful
 mongoose.connect(uri)
     .then(() => console.log('MongoDB Atlas connected successfully!'))
     .catch(err => console.error('MongoDB Atlas connection error:', err));
@@ -26,10 +26,10 @@ mongoose.connect(uri)
 app.use('/api', apiRoutes);
 app.use('/auth', authRoutes)
 
-// Serve static files from the public directory
+// Public folder as static files
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-// Define route for the root URL
+// User will land on this page first
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'templates', 'base.html'));
 });
