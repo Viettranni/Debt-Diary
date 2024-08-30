@@ -8,7 +8,10 @@ const apiRoutes = require('./routes/apiRoutes')
 const app = express();
 
 // Middleware to parse JSON bodies
-app.use(express.json())
+app.use(express.json());
+
+// Handling URLencoded (for future implement)
+app.use(express.urlencoded({extended: false}));
 
 //------------------------------------------------------------------------------------------------------------------------
 
@@ -35,8 +38,8 @@ app.get('/', (req, res) => {
 });
 
 
-// Start the server and listen on PORT 3000 if not setted in env
-const PORT = process.env.PORT || 3000;
+// Start the server and listen on PORT 5001 if not setted in env
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
